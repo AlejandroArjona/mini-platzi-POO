@@ -42,3 +42,53 @@ const juanita = new Student(
         'Creacion de personajes',
     ]
 );
+
+//Prototipos con la sintaxis de Clases
+
+/* class Student2 {
+    constructor(name, age, cursosAprobados){
+        this.name = name;
+        this.age = age;
+        this.cursosAprobados = cursosAprobados;
+    }
+
+    aprobarCurso(nuevoCurso) {
+        this.cursosAprobados.push(nuevoCurso);
+    }
+}
+
+const miguelito = new Student2(
+    'Miguel',
+    28,
+    [
+        'Curso de analisis y ciencia de datos',
+        'principios de visualizacion de datos'
+    ],
+); */
+
+//Podemos almacenar los atributos dentro de un objeto en caso de que sean demasiados atributos
+class Student2 {
+    constructor({
+        name, 
+        age, 
+        cursosAprobados = [],
+    }) {
+        this.name = name;
+        this.age = age;
+        this.cursosAprobados = cursosAprobados;
+    }
+
+    aprobarCurso(nuevoCurso) {
+        this.cursosAprobados.push(nuevoCurso);
+    }
+}
+
+//Para poder hacer instancias debemos enviar un objeto literal con los atributos que se desean
+const miguelito = new Student2({
+    name: 'Miguel',
+    age: 28,
+    cursosAprobados: [
+        'Curso de analisis y ciencia de datos',
+        'principios de visualizacion de datos'
+    ],
+});
