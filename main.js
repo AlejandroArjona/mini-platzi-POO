@@ -92,7 +92,7 @@ const miguelito = new Student2(
         'principios de visualizacion de datos'
     ],
 }); */
-class LearningPath {
+/* class LearningPath {
 
 }
 
@@ -144,4 +144,32 @@ const miguelito2 = new Student({
     escuelaWeb,
     escuelaData,
   ],
+}); */
+
+// Getters y setters en JS
+
+class Course {
+    constructor({
+        name,
+        classes = [],
+    }) {
+        this._name = name;
+        this.classes = classes;
+    }
+
+    get name() { // Ejemplo de un getter, sirve para entrar a un atributo
+        return this._name;
+      }
+    
+    set name(nuevoNombrecito) {// Ejemplo de un setter, sirve para modificar un atributo
+        if (nuevoNombrecito === "Curso Malito de Programación Básica") {
+          console.error("Web... no");
+        } else {
+          this._name = nuevoNombrecito; 
+        }
+    }
+}
+
+const cursoProgBasica = new Course({
+    name: 'Curso gratis de programacion basica',
 });
